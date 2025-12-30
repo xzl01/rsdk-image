@@ -16,6 +16,10 @@
   },
   "image": "mcr.microsoft.com/devcontainers/base:bookworm",
   "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker": {
+      "version": "latest",
+      "moby": false
+    },
     "ghcr.io/devcontainers/features/nix:1": {
       "version": "latest",
       "packages": "cachix,direnv,devenv",
