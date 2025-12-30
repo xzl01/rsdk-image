@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+# post-install: attempt to load included docker image tar if present
+ARCH=$(dpkg --print-architecture 2>/dev/null || echo "amd64")
+IMG_PATH="/usr/share/rsdk-image/images/${ARCH}/image.tar"
+if [ -f "$IMG_PATH" ] && command -v docker >/dev/null 2>&1; then
+  echo "Loading Docker image from $IMG_PATH ..."
+  docker load -i "$IMG_PATH" || true
+fi
+exit 0

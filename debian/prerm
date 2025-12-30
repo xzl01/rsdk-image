@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+# prerm: no-op for now (could remove images if desired)
+exit 0
