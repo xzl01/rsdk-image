@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 # run-rsdk-image: run the installed offline image with sensible mounts
-# Usage: run-rsdk-image [--name NAME] [--] [docker run args...]
+# Usage: run-rsdk-image [--name NAME] [-c] [--] [docker run args...]
 
 IMAGE_HINT="rsdk-image"
 ARCH=$(dpkg --print-architecture 2>/dev/null || echo amd64)
@@ -68,6 +68,7 @@ for _var in HTTP_PROXY HTTPS_PROXY NO_PROXY http_proxy https_proxy no_proxy; do
 done
 
 # Allow passing extra args to docker run
+USE_CN=0
 EXTRA_ARGS=""
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -80,6 +81,10 @@ while [ $# -gt 0 ]; do
       DOCKER_RUN_OPTS="$DOCKER_RUN_OPTS --name $2"
       shift 2
       ;;
+    -c)
+      USE_CN=1
+      shift
+      ;;
     *)
       EXTRA_ARGS="$EXTRA_ARGS $1"
       shift
@@ -88,7 +93,11 @@ while [ $# -gt 0 ]; do
 done
 
 if [ -z "$EXTRA_ARGS" ]; then
-  EXTRA_ARGS="/usr/local/bin/install-rsdk.sh && /bin/bash"
+  if [ "$USE_CN" -eq 1 ]; then
+    EXTRA_ARGS="/usr/local/bin/install-rsdk.sh -c && /bin/bash"
+  else
+    EXTRA_ARGS="/usr/local/bin/install-rsdk.sh && /bin/bash"
+  fi
 fi
 
 echo "Running container from image: $IMG_TO_RUN"

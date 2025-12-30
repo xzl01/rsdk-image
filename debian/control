@@ -1,6 +1,6 @@
 Source: rsdk-image
 Maintainer: "Radxa Computer Co., Ltd" <dev@radxa.com>
-Section: optional
+Section: utils
 Priority: standard
 Standards-Version: 4.6.0
 Build-Depends: debhelper (>=12~),
@@ -11,10 +11,9 @@ Build-Depends: debhelper (>=12~),
 
 Package: rsdk-image
 Architecture: any
-Section: optional
+Section: utils
 Priority: optional
 Depends: ${misc:Depends}, docker.io | docker-ce
-Description: rsdk-image
- TDescription: Offline Docker image package for Debian 12
+Description: Offline Docker image package for Radxa SDK
  This package contains a pre-pulled Docker image tarball and will attempt
  to load it into Docker on installation if Docker is available on the host.
