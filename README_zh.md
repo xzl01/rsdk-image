@@ -4,7 +4,7 @@ Debian 12 离线 Docker 镜像包，提供预构建的 Debian 12 容器镜像供
 
 ## 安装
 
-从 [Releases](https://github.com/xzl01/rsdk-image/releases) 页面下载最新的 `.deb` 包。
+从 [Releases](https://github.com/radxa-pkg/rsdk-image/releases) 页面下载最新的 `.deb` 包。
 
 安装：
 
@@ -62,7 +62,7 @@ run-rsdk-image --name my-container -- bash -c "echo hello"
 克隆仓库：
 
 ```bash
-git clone https://github.com/xzl01/rsdk-image.git
+git clone https://github.com/radxa-pkg/rsdk-image.git
 cd rsdk-image
 ```
 

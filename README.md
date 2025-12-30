@@ -4,7 +4,7 @@ Offline Docker image package for Debian 12, providing a pre-built Debian 12 cont
 
 ## Installation
 
-Download the latest `.deb` package from the [Releases](https://github.com/xzl01/rsdk-image/releases) page.
+Download the latest `.deb` package from the [Releases](https://github.com/radxa-pkg/rsdk-image/releases) page.
 
 Install with:
 
@@ -62,7 +62,7 @@ run-rsdk-image --name my-container -- bash -c "echo hello"
 Clone the repository:
 
 ```bash
-git clone https://github.com/xzl01/rsdk-image.git
+git clone https://github.com/radxa-pkg/rsdk-image.git
 cd rsdk-image
 ```
 

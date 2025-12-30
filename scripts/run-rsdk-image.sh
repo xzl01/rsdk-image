@@ -4,8 +4,7 @@ set -e
 # Usage: run-rsdk-image [--name NAME] [-c] [--] [docker run args...]
 
 IMAGE_HINT="rsdk-image"
-ARCH=$(dpkg --print-architecture 2>/dev/null || echo amd64)
-IMG_TAR="/usr/share/rsdk-image/images/${ARCH}/image.tar"
+IMG_TAR="/usr/share/rsdk-image/image.tar"
 
 # If installed as package, the script will be copied to /usr/bin; ensure executable
 umask 022
