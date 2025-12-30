@@ -1,0 +1,7 @@
+# Lintian overrides for rsdk-image package
+
+# Suppress warnings for missing manual page
+rsdk-image: no-manual-page
+
+# Suppress warnings for script language extension (should be fixed by renaming)
+rsdk-image: script-with-language-extension

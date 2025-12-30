@@ -27,5 +27,5 @@ RUN cd /tmp/rsdk \
   && rm -rf /var/lib/apt/lists/* /tmp/* /root/.cache
 
 # Optional runtime installer helper (provided externally in repo)
-COPY scripts/install-rsdk.sh /usr/local/bin/install-rsdk.sh
-RUN chmod 0755 /usr/local/bin/install-rsdk.sh
+COPY scripts/install-rsdk /usr/local/bin/install-rsdk
+RUN chmod 0755 /usr/local/bin/install-rsdk

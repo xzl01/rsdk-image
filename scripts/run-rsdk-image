@@ -93,9 +93,9 @@ done
 
 if [ -z "$EXTRA_ARGS" ]; then
   if [ "$USE_CN" -eq 1 ]; then
-    EXTRA_ARGS="/usr/local/bin/install-rsdk.sh -c && /bin/bash"
+    EXTRA_ARGS="/usr/local/bin/install-rsdk -c && /bin/bash"
   else
-    EXTRA_ARGS="/usr/local/bin/install-rsdk.sh && /bin/bash"
+    EXTRA_ARGS="/usr/local/bin/install-rsdk && /bin/bash"
   fi
 fi
 
