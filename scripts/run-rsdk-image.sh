@@ -101,4 +101,4 @@ if [ -z "$EXTRA_ARGS" ]; then
 fi
 
 echo "Running container from image: $IMG_TO_RUN"
-exec docker run $DOCKER_RUN_OPTS $EXTRA_ARGS "$IMG_TO_RUN"
+exec docker run $DOCKER_RUN_OPTS "$IMG_TO_RUN" $EXTRA_ARGS
