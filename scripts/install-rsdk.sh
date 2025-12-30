@@ -11,7 +11,9 @@ done
 
 # Auto-detect if in China network if -c not specified
 if [ "$USE_CN_MIRROR" -eq 0 ]; then
-  if ! curl -s google.com | grep -q "301 Moved"; then
+  # Consider the network "China" if we cannot reach Google within a short timeout.
+  # Use curl's exit status instead of matching a specific HTTP response body.
+  if ! curl -s --head --connect-timeout 5 https://www.google.com >/dev/null 2>&1; then
     USE_CN_MIRROR=1
   fi
 fi
